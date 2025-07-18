@@ -25,6 +25,16 @@
 
 - link:
     $XDG_CONFIG_HOME/shell: shell
+    $XDG_CONFIG_HOME/zsh: zsh
+    ~/.zshrc: zsh/zshrc
+    ~/.signature.txt: signature.txt
+    ~/.config/bash: bash
+    ~/.bashrc: bash/bashrc
+    $XDG_CONFIG_HOME/git: git
+    ~/.gitconfig: git/gitconfig
+    $XDG_CONFIG_HOME/tmux: tmux
+    $XDG_CONFIG_HOME/starship: starship
+    $XDG_CONFIG_HOME/vscode: vscode
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
