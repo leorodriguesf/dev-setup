@@ -1,0 +1,13 @@
+name: CI Pipeline
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Start development setup
+        run: |
+          curl -o- https://raw.githubusercontent.com/leorodriguesf/dev-setup/refs/heads/main/boot | bash
