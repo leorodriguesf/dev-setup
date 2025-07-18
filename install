@@ -4,6 +4,8 @@ set -e
 
 source ./shell/settings.sh
 
+DEFAULT_CONFIG_PREFIX="default"
+CONFIG_SUFFIX=".conf.yaml"
 CONFIG="install.conf.yaml"
 DOTBOT_DIR="dotbot"
 
@@ -14,4 +16,10 @@ cd "${BASEDIR}"
 git -C "${DOTBOT_DIR}" submodule sync --quiet --recursive
 git submodule update --init --recursive "${DOTBOT_DIR}"
 
-"${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "${CONFIG}" "${@}"
+for conf in ${DEFAULT_CONFIG_PREFIX} ${@}; do
+    if [ -f "${BASEDIR}/${conf}${CONFIG_SUFFIX}" ]; then
+        "${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "${conf}${CONFIG_SUFFIX}"
+    else
+        echo "Configuration file ${conf}${CONFIG_SUFFIX} not found, skipping..."
+    fi
+done

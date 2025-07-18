@@ -76,6 +76,6 @@ cd ~/.dev-setup
 
 echo "Installation starting..."
 
-source ~/.dev-setup/install
+source ~/.dev-setup/install $OS
 
 cd - >/dev/null
