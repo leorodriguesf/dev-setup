@@ -23,15 +23,38 @@
     - $XDG_BIN_HOME
     - $BACKUP_DIR
 
+- shell:
+    - [
+        cp ~/.gitconfig ~/.gitconfig.backup || echo "No gitconfig found",
+        skipping...",
+        Backing up gitconfig,
+      ]
+    - [
+        cp ~/.zshrc ~/.zshrc.backup || echo "No zshrc found",
+        skipping...",
+        Backing up zshrc,
+      ]
+    - [
+        cp ~/.bashrc ~/.bashrc.backup || echo "No bashrc found",
+        skipping...",
+        Backing up bashrc,
+      ]
+
 - link:
     $XDG_CONFIG_HOME/shell: shell
     $XDG_CONFIG_HOME/zsh: zsh
-    ~/.zshrc: zsh/zshrc
+    ~/.zshrc:
+      path: zsh/zshrc
+      force: true
     ~/.signature.txt: signature.txt
     ~/.config/bash: bash
-    ~/.bashrc: bash/bashrc
+    ~/.bashrc:
+      path: bash/bashrc
+      force: true
     $XDG_CONFIG_HOME/git: git
-    ~/.gitconfig: git/gitconfig
+    ~/.gitconfig:
+      path: git/gitconfig
+      force: true
     $XDG_CONFIG_HOME/tmux: tmux
     $XDG_CONFIG_HOME/starship: starship
     $XDG_CONFIG_HOME/vscode: vscode
