@@ -53,4 +53,16 @@ esac
 
 echo "$OS dependencies installed"
 
-source ./install
+echo "Cloning repository..."
+
+rm -rf ~/.dev-setup
+
+git clone https://github.com/leorodriguesf/dev-setup.git ~/.dev-setup >/dev/null
+
+cd ~/.dev-setup
+
+echo "Installation starting..."
+
+source ~/.dev-setup/install
+
+cd - >/dev/null
