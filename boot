@@ -17,9 +17,9 @@ Darwin)
     ;;
 esac
 
-echo "=> $OS detected"
+echo "=> $OS_NAME detected"
 
-echo -e "\nInstalling $OS dependencies"
+echo -e "\nInstalling $OS_NAME dependencies"
 
 case "$OS" in
 macos)
