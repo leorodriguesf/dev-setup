@@ -52,3 +52,5 @@ macos)
 esac
 
 echo "$OS dependencies installed"
+
+source ./install
