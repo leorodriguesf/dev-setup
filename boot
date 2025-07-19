@@ -74,8 +74,13 @@ git clone https://github.com/leorodriguesf/dev-setup.git ~/.dev-setup >/dev/null
 
 cd ~/.dev-setup
 
+
+if [[ $DEV_SETUP_REF != "main" ]]; then
+    git checkout "$DEV_SETUP_REF"
+fi
+
 echo "Installation starting..."
 
-source ~/.dev-setup/install
+source ~/.dev-setup/install $OS
 
 cd - >/dev/null
