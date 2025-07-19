@@ -27,7 +27,7 @@
     $XDG_CONFIG_HOME/aerospace: macos/aerospace
 
 - shell:
-    - [
-        ansible-playbook macos/applications/playbook.yaml,
-        Installing applications,
-      ]
+    - command: ansible-playbook macos/applications/playbook.yaml
+      stdin: true
+      stdout: true
+      description: Installing applications
