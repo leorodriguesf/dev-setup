@@ -74,6 +74,7 @@ git clone https://github.com/leorodriguesf/dev-setup.git ~/.dev-setup >/dev/null
 
 cd ~/.dev-setup
 
+DEV_SETUP_REF=${DEV_SETUP_REF:-"main"}
 
 if [[ $DEV_SETUP_REF != "main" ]]; then
     git checkout "$DEV_SETUP_REF"
