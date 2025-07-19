@@ -1,0 +1,4 @@
+- hosts: localhost
+  tasks:
+    - import_tasks: tasks/1password.yaml
+      tags: 1password

@@ -25,3 +25,9 @@
 
 - link:
     $XDG_CONFIG_HOME/aerospace: macos/aerospace
+
+- shell:
+    - [
+        ansible-playbook macos/applications/playbook.yaml,
+        Installing applications,
+      ]
