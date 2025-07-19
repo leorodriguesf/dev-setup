@@ -24,4 +24,4 @@
     - $BACKUP_DIR
 
 - link:
-    $XDG_CONFIG_HOME/aerospace: hosts/macos/aerospace
+    $XDG_CONFIG_HOME/aerospace: macos/aerospace
